@@ -19,21 +19,31 @@
  <div class="container">
  <a class="navbar-brand" href ="/"> </a>
   <span class="navbar-text">
-  <%= flash["notice"] %>
+  
       <% @user = User.find_by({"id" => session["user_id"]}) %>
       <% if @user == nil %>
-        <a href="/users/new">Signup</a>
+        <a href="/users/new" class="btn btn-dark">Signup</a>
         <a> I </a>
-        <a href="/login">Login</a>
+        <a href="/login" class="btn btn-dark">Login</a>
        <% else %>
           <a> I </a>
-          <%= @user["username"] %>
+          Logged in as: <%= @user["username"] %>
+          <a> I </a>
           <a href="/logout">Logout</a>
       <% end %>
+   
     </span>
     </div>
     </nav>
 
-    <%= yield %>
+<div class="container">
+   <% if flash["notice"] !=nil %>
+   <div class="alert alert-info">
+    <%= flash["notice"] %>
+</div>
+<% end %>
+
+   <%= yield %>
+  
   </body>
 </html>
