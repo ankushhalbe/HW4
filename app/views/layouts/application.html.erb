@@ -27,9 +27,9 @@
         <a href="/login" class="btn btn-dark">Login</a>
        <% else %>
           <a> I </a>
-          Logged in as: <%= @user["username"] %>
+          <a class="btn btn-secondary"> Logged in as: <%= @user["username"] %> </a>
           <a> I </a>
-          <a href="/logout">Logout</a>
+          <a href="/logout" class="btn btn-dark">Logout</a>
       <% end %>
    
     </span>
