@@ -15,28 +15,24 @@
   </head>
 
   <body>
-  <nav class="navbar bg-body-tertiary">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30" height="24">
-    </a>
-  </div>
-</nav>
-
-    <div>
-      <%= flash["notice"] %>
-    </div>
-    <div class="container">
-   <!--<a href="/">Home</a> -->
+ <nav class="navbar bg-primary mb-3" data-bs-theme="dark">
+ <div class="container">
+ <a class="navbar-brand" href ="/"> </a>
+  <span class="navbar-text">
+  <%= flash["notice"] %>
       <% @user = User.find_by({"id" => session["user_id"]}) %>
       <% if @user == nil %>
         <a href="/users/new">Signup</a>
+        <a> I </a>
         <a href="/login">Login</a>
        <% else %>
-          Hey, <%= @user["username"] %>
+          <a> I </a>
+          <%= @user["username"] %>
           <a href="/logout">Logout</a>
       <% end %>
+    </span>
     </div>
+    </nav>
 
     <%= yield %>
   </body>
