@@ -10,7 +10,13 @@
   <p><%= entry["description"] %></p>
   </div>
 <% end %>
+    <% if entry.uploaded_image.attached? %>
+    <img src="<%= url_for(entry.uploaded_image)%>" class="img-fluid">
+    <% else %>
+    <img src="<%= entry["image"] %>" class="img-fluid">
+    <% end %>
 </div>
+
 <p>
   <a href="/entries/new?place_id=<%= @place["id"] %>" class="btn btn-dark">New Entry</a>
 </p>
