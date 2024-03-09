@@ -22,7 +22,7 @@ test:
 
 production:
   <<: *default
-adapter: postgresql
-database: places_ankush_production
-username: places_ankush
-password: <%= ENV["PLACES_ANKUSH_DATABASE_PASSWORD"] %>
+  adapter: postgresql
+  database: places_ankush_production
+  username: places_ankush
+  password: <%= ENV["PLACES_ANKUSH_DATABASE_PASSWORD"] %>
